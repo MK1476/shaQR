@@ -2,9 +2,9 @@
     "name": "shaQR",
     "version": "0.0.1",
     "manifest_version": 3,
-    "browser_action": {
+    "action": {
         "default_popup": "popup.html",
-        "default_icon": "shaQR.png"
+        "default_icon": "shaQR2.png"
     },
     "icons":{
         "128":"shaQR.png"
