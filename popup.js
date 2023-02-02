@@ -9,16 +9,17 @@ var qrcode = new QRCode("qr-code", {
     colorLight : "#ffffff",
     correctLevel : QRCode.CorrectLevel.H
   });
-document.addEventListener("DOMContentLoaded", function() {
+
+  qrcode.makeCode("hii");
     chrome.runtime.onMessage.addListener(
         function(request, sender, sendResponse) {
           console.log(sender.tab ?
                       "from a content script:" + sender.tab.url :
                       "from the extension");
           if (request.message[0] === "hello")
-            sendResponse({farewell: "goodbye"});
+             qrcode.makeCode(message[1]);
         }
       );
-});
+
 
     

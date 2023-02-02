@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shaQR</title>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/dist/qrcode.min.js"></script>
-    <script src="popup.js"></script>
+   
+    <style>
+        #qrcode {
+          width: 80%;
+          height: 80%;
+        }
+      </style>
 </head>
 <body>
     <p>
         share through QR
     </p>
-    
-
-    
-
-    <div id="qr-code"></div>
-
-  
+    <div id="qrcode"></div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/dist/qrcode.min.js"></script>
+    <script src="popup.js"></script>
 </body>
 </html>

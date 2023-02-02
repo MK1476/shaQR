@@ -16,6 +16,8 @@
         "contextMenus",
         "notifications",
         "scripting",
-        "tabs"
+        "tabs",
+        "runtime",
+        "activeTab"
       ]
 }

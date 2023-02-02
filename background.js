@@ -11,7 +11,7 @@ chrome.contextMenus.create({
          selectedText = info.selectionText.toString();
          console.log(`Sending message to tab with id: ${selectedText}`);
          chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            chrome.runtime.sendMessage( message =  ["hello"], function(response) {
+            chrome.tabs.sendMessage(tab.id,{ message : "hello",data : selectedText}, function(response) {
               if (!chrome.runtime.lastError) {
                   // if you have any response
 
@@ -20,6 +20,10 @@ chrome.contextMenus.create({
                   // if you don't have any response it's ok but you should actually handle
                   // it and we are doing this when we are examining chrome.runtime.lastError
               }
+
+            if (!response) {
+                console.error("No response from background script");
+            }
             });
           });
         
