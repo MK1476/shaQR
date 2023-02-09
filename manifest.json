@@ -1,6 +1,6 @@
 {
     "name": "shaQR",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html",
@@ -9,6 +9,12 @@
     "icons":{
         "128":"shaQR.png"
     },
+    "content_scripts": [
+      {
+        "js": [ "popup.js" ],
+        "matches": [ "http://localhost:3000/" ]
+      }
+    ],
     "background": {
         "service_worker": "background.js"
       },
@@ -20,5 +26,9 @@
         
         "downloads",
         "activeTab"
-      ]
+      ],
+      "content_security_policy": {
+        "extension_pages": "script-src 'self' ; object-src 'self'; script-src-elem 'self' 'unsafe-inline' https://music.yandex.ru/;"
+    }
+
 }

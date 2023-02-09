@@ -1,4 +1,10 @@
+import io from 'socket.io-client';
 
+  const socket = io('http://localhost:3000');
+  
+  socket.on('connect', () => {
+    console.log('Connected to the server');
+  });
 
 chrome.runtime.sendMessage({ action: "getQRData" }, function(url) {
     console.log(url + 'jhguhv');
@@ -7,33 +13,25 @@ chrome.runtime.sendMessage({ action: "getQRData" }, function(url) {
     document.getElementById("qr").innerHTML = "<img src="+ url+ "  alt=\"HTML tutorial\" style=\"width:200px;height:200px;\">";
     
 });
+const chatBox = document.getElementById("chat-box");
+const messageInput = document.getElementById("message-input");
+const sendButton = document.getElementById("send-button");
+document.addEventListener('DOMContentLoaded', function () {
+sendButton.addEventListener("click", function() {
+  const message = messageInput.value;
+  chrome.runtime.sendMessage({ type: "sendMessage", message: message });
+  messageInput.value = "";
+});
 
 
-    
-  
+});
 
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (request.type === "receiveMessage") {
+      const message = request.message;
+      chatBox.innerHTML += message + "<br>";
+    }
+  }
+);
 
-
-// 'use-strict'
-// var qrcode = new QRCode("qr-code", {
-//     text: "",
-//     width: 128,
-//     height: 128,
-//     colorDark : "#000000",
-//     colorLight : "#ffffff",
-//     correctLevel : QRCode.CorrectLevel.H
-//   });
-
-//   qrcode.makeCode("hii");
-//     chrome.runtime.onMessage.addListener(
-//         function(request, sender, sendResponse) {
-//           console.log(sender.tab ?
-//                       "from a content script:" + sender.tab.url :
-//                       "from the extension");
-//           if (request.message[0] === "hello")
-//              qrcode.makeCode(message[1]);
-//         }
-//       );
-
-
-    

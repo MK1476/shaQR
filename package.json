@@ -1,0 +1,32 @@
+{
+  "name": "com.shaqr.www",
+  "version": "1.0.0",
+  "description": "Share through Qr Code",
+  "main": "popup.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MK1476/shaQR.git"
+  },
+  "keywords": [
+    "share",
+    "qr"
+  ],
+  "author": "Mohammad Karimullah (MK)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MK1476/shaQR/issues"
+  },
+  "homepage": "https://github.com/MK1476/shaQR#readme",
+  "dependencies": {
+    "babel-loader": "^9.1.2",
+    "socket.io-client": "^4.5.4"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

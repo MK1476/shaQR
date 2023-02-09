@@ -1,0 +1,14 @@
+
+// chrome.runtime.onMessage.addListener(
+//   function(request, sender, sendResponse) {
+//     if (request.type === "sendMessage") {
+//       socket.emit("message", request.message);
+//     }
+//   }
+// );
+
+// socket.on("message", function(message) {
+//   chrome.runtime.sendMessage({ type: "receiveMessage", message: message });
+// });
+
+  
