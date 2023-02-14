@@ -10,8 +10,10 @@ Generates QR codes from selected text, links, images in Chrome.
 To generate a QR code for selected text, links, images, do the following:
 
 * Right-click on the selected text or link.
+![Sample image ](/images/screenshot1-shaqr.jpg)
 * Click the "share through QR - shaQR " option in the context menu.
 * A popup window will open with the generated QR code.
+![Sample image ](/images/screenshot2-shaqr.jpg)
 ## Customization
 You can customize the QR code size by modifying the width and height properties in the popup.js file.
 
